@@ -59,37 +59,23 @@ import foods from './foods.json';
 
 Create a `FoodBox` component that takes at least `food` as a prop and displays a box with all the information about an ingredient.
 
-You can use this HTML snippet to display properly the `FoodBox`:
+You can use the following HTML snippet to structure your `FoodBox` component. Please notice, the following is `html`, not valid `jsx`, so you'll need to make the conversion:
 
 ```html
-<div className="box">
-  <article className="media">
-    <div className="media-left">
-      <figure className="image is-64x64">
-        <img src="https://i.imgur.com/eTmWoAN.png" />
-      </figure>
-    </div>
-    <div className="media-content">
-      <div className="content">
-        <p>
-          <strong>Pizza</strong> <br />
-          <small>400 cal</small>
-        </p>
-      </div>
-    </div>
-    <div className="media-right">
-      <div className="field has-addons">
-        <div className="control">
-          <input className="input" type="number" value="1" />
-        </div>
-        <div className="control">
-          <button className="button is-info">
-            +
-          </button>
-        </div>
-      </div>
-    </div>
-  </article>
+<div class="media">
+  <img
+    src="https://i.imgur.com/eTmWoAN.png"
+    class="img-thumbnail mr-3 mw-25 border-0"
+    style="max-width: 10em;"
+  />
+  <div class="media-body align-self-center">
+    <h5 class="mt-0 mb-1">Pizza</h5>
+    <small>400 cal</small>
+  </div>
+  <form class="row align-self-center">
+    <input class="form-control col-9" type="number" value="1" />
+    <button class="btn btn-primary col-3">+</button>
+  </form>
 </div>
 ```
 
@@ -97,7 +83,7 @@ You can use this HTML snippet to display properly the `FoodBox`:
 
 ### Iteration 2 | Display food
 
-In your `App` component (your main component), display as many `FoodBox` as elements inside the variable `foods`.
+In your `App` component (your main component), display as many `FoodBox` as the number elements inside the array of `foods`.
 
 ![](https://i.imgur.com/3TVQJDO.png)
 
@@ -125,14 +111,12 @@ You will also need to display the total amount of calories at the bottom of the 
 
 ![](https://media.giphy.com/media/fH0dyqpPJRvTbiF5rJ/giphy.gif)
 
-If you don't remember how to create responsive columns with Bulma, you can check the [documentation](https://bulma.io/documentation/columns/basics/).
+### Bonus: Iteration 5 | Group ingredients
 
-### Iteration 5 | Bonus | Group ingredients
+You've build an awesome application, but there's a little problem in the UX. For example, if you click twice on "Pizza", it will display 2 lines "_1 Pizza = 400 cal_" instead of 1 line "_2 Pizza = 800 cal_". Fix that problem.
 
-You made an awesome application, but you have found a little problem in the UX. For example, if you click twice on "Pizza", it will display 2 lines "_1 Pizza = 400 cal_" instead of 1 line "_2 Pizza = 800 cal_". Fix that problem.
+### Bonus: Iteration 6 | Allow the user to remove an ingredient
 
-### Iteration 6 | Bonus | Allow the user to remove an ingredient
-
-On the "_Today's food_", add a trash icon to let users removing one of their items.
+On each item on the "_Today's food_" list, add a button with a trash can icon that allows the user to remove each of the items. To start, you might want to write "Remove" inside of the button, and later choose what approach to take to insert the icon. We would recommend checking either [Google Material Icons](https://material.io/resources/icons) or [FontAwesome](https://fontawesome.com/). You might also get a good result by just inserting an emoji 🗑.
 
 Happy coding! 💙
