@@ -4,9 +4,9 @@
 
 ## Introduction
 
-You just realized that since the beginning of the bootcamp, your diet is not healthy and it may have an impact on your health (and productivity), now and in the long term.
+After a few weeks of intensive work in the Web Development Bootcamp, you've realized that your diet hasn't been very balanced. This could have a negative impact on your health and productivity.
 
-To take care of the food you eat, you decided to create a nutrition app that will track everything you eat!
+To ensure that you keep a balanced diet, we have decided to build a nutrition app to track everything you eat.
 
 ![](https://media.giphy.com/media/fH0dyqpPJRvTbiF5rJ/giphy.gif)
 
@@ -21,7 +21,7 @@ To take care of the food you eat, you decided to create a nutrition app that wil
 
   ```
   git add .
-  git commit -m "done"
+  git commit -m "Completed lab"
   git push origin master
   ```
 
@@ -39,7 +39,7 @@ To use Bootstrap and React-Bootstrap in your app, you first need to install both
 $ npm install bootstrap react-bootstrap
 ```
 
-Then, import the minified version of the Bootstrap stylesheets into your `index.js` file.
+Then, import the minified version of the Bootstrap stylesheet into your `index.js` file.
 
 ```javascript
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -49,17 +49,17 @@ You are now ready to start working with React-Bootstrap components! Follow the p
 
 ### Import the data
 
-Import the array of food items from the `foods.json` file.
+At the top of your `App.jsx` file, import the array of meals from the `meals.json` file:
 
 ```js
-import foods from './foods.json';
+import meals from './meals.json';
 ```
 
-### Iteration 1 | Create `FoodBox` component
+### Iteration 1 | Create the `MealBox` component
 
-Create a `FoodBox` component that takes at least `food` as a prop and displays a box with all the information about an ingredient.
+Let's create a `MealBox` component. It should take `meal` as a prop (one of the objects representing a single meal) and display a box with all of the information about that specific item. You can test this for now by rendering the component with the first meal on the array of `meals`.
 
-You can use the following HTML snippet to structure your `FoodBox` component. Please notice, the following is `html`, not valid `jsx`, so you'll need to make the conversion:
+Use the following HTML snippet to structure your `MealBox` component. Please note, the following is pure `html`, not a valid `jsx` template, so you'll need to make the conversion:
 
 ```html
 <div class="media">
@@ -81,42 +81,44 @@ You can use the following HTML snippet to structure your `FoodBox` component. Pl
 
 ![](https://i.imgur.com/bY9i5Rw.png)
 
-### Iteration 2 | Display food
+### Iteration 2 | Display meal
 
-In your `App` component (your main component), display as many `FoodBox` as the number elements inside the array of `foods`.
+In your `App` component (your main component), display one `MealBox` component for each meal inside of the `meals` array.
 
 ![](https://i.imgur.com/3TVQJDO.png)
 
-### Iteration 3 | Add new food
+### Iteration 3 | Add new meal
 
-Create a button to add new foods.
+Create a button to add new meals.
 
-When a user clicks the button, a form will appear with fields for a name, number of calories, and an image.
+When a user clicks the button, a form should appear with fields for a _name_, _number of calories_, and an _image_.
 
-When the user clicks submit, the food will be added to the list.
+When the user clicks submit, the meal will be added to the list.
 
 The form should disappear when the user clicks the submit button.
 
 ### Iteration 4 | Implement search bar
 
-Create a `Search` component to perform a search that updates the list of all meal.
+Create a `Search` component to perform a search that updates the list of all meals.
 
 ![](https://i.imgur.com/XaOpAx8.png)
 
 ### Iteration 5 | Create add buttons
 
-On your `FoodBox`, you have an input an "+" button. Use them so that when a user clicks on the button, it adds them on a list on the right called "_Today's foods_".
+On your `MealBox`, you have an input and a "+" button. Use them so that, when the user clicks on the button, it adds the item to a list displayed on the right side of your app, titled "_Today's meals_".
 
-You will also need to display the total amount of calories at the bottom of the list as a recap.
+You will also need to display the total amount of calories at the bottom of the list.
 
 ![](https://media.giphy.com/media/fH0dyqpPJRvTbiF5rJ/giphy.gif)
 
-### Bonus: Iteration 5 | Group ingredients
+### Bonus: Iteration 5 | Group meals
 
-You've build an awesome application, but there's a little problem in the UX. For example, if you click twice on "Pizza", it will display 2 lines "_1 Pizza = 400 cal_" instead of 1 line "_2 Pizza = 800 cal_". Fix that problem.
+You've built an awesome application, but there's a little problem in the User Experience. For example, if you click twice on "Pizza", it will display 2 lines "_1 Pizza = 400 cal_" instead of 1 line "_2 Pizza = 800 cal_". Fix that problem.
 
-### Bonus: Iteration 6 | Allow the user to remove an ingredient
+### Bonus: Iteration 6 | Allow the user to remove a meal
 
-On each item on the "_Today's food_" list, add a button with a trash can icon that allows the user to remove each of the items. To start, you might want to write "Remove" inside of the button, and later choose what approach to take to insert the icon. We would recommend checking either [Google Material Icons](https://material.io/resources/icons) or [FontAwesome](https://fontawesome.com/). You might also get a good result by just inserting an emoji 🗑.
+On each item on the "_Today's meals_" list, add a button with a trash can icon that allows the user to remove each of the items.
+
+To start, you might want to write "Remove" inside of the button, and later choose what approach to take to insert the icon. We would recommend checking either [Google Material Icons](https://material.io/resources/icons) or [FontAwesome](https://fontawesome.com/). You might also get a good result by just inserting an emoji 🗑.
 
 Happy coding! 💙
