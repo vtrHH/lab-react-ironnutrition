@@ -10,11 +10,16 @@ import Search from './components/Search';
 class App extends Component {
   state = {
     meals: meals,
+    keyword: '',
     active: false
   };
 
   toggleMealForm = (event) => {
     this.setState({ active: !this.state.active });
+  };
+
+  handleKeywordChange = (keyword) => {
+    this.setState({ keyword: keyword });
   };
 
   createMeal = (meal) => {
@@ -25,11 +30,18 @@ class App extends Component {
     return (
       <div>
         <h1>IronNutrition</h1>
-        <Search />
+        <Search
+          onKeywordChange={this.handleKeywordChange}
+          keyword={this.state.keyword}
+        />
         <ul>
-          {this.state.meals.map((meal) => (
-            <MealBox key={meal.image} meal={meal} />
-          ))}
+          {this.state.meals
+            .filter((meal) =>
+              meal.name.toLowerCase().includes(this.state.keyword.toLowerCase())
+            )
+            .map((meal) => (
+              <MealBox key={meal.image} meal={meal} />
+            ))}
         </ul>
         <button onClick={this.toggleMealForm}>Add a new meal</button>
         {this.state.active && (

@@ -1,16 +1,14 @@
 import React from 'react';
-import meals from './meals';
+import meals from '../meals.json';
 
 class Search extends React.Component {
   state = {
-    meals: meals,
-    keyword: ''
+    meals: meals
   };
 
-  handleChangeOfSearchInput = (event) => {
+  handleKeywordChange = (event) => {
     const value = event.target.value;
-    console.log(value);
-    const mealClone = [...this.state.meals];
+    this.props.onKeywordChange(value);
   };
 
   render() {
@@ -18,8 +16,8 @@ class Search extends React.Component {
       <input
         type="text"
         placeholder="Type in what you are looking for..."
-        value={this.state.keywords}
-        onChange={this.handleChangeOfSearchInput}
+        value={this.props.keyword}
+        onChange={this.handleKeywordChange}
       />
     );
   }

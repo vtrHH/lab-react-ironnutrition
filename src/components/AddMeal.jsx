@@ -19,7 +19,7 @@ class AddMeal extends React.Component {
       };
       this.setState({ name: '', numberOfCalories: '', image: '' });
       this.props.onMealCreate(meal);
-      // this.props.toggleMealForm();
+      this.props.onMealAdded();
     }
   };
 
